@@ -1,262 +1,40 @@
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+     body {
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
     }
-
-    body {
+    nav.navbar {
       background-color: #000;
-      color: white;
-      overflow-x: hidden;
     }
-
-    /* Glowing particle background */
-    canvas#bgCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
-
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      backdrop-filter: blur(5px);
-    }
-
-    nav .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: rgb(255, 255, 255);
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      transition: color 0.3s ease;
+    nav a.nav-link {
+      color: #fff !important;
       font-weight: 500;
     }
-
-    nav ul li a:hover {
-      color: rgb(222, 222, 22);
+    nav a.nav-link:hover {
+      color: #0d6efd !important;
     }
-
     section {
-      min-height: 100vh;
-      padding: 120px 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
+      padding: 80px 0;
     }
-
-    section h1, section h2 {
-      color: rgb(231, 179, 6);
-      margin-bottom: 15px;
-    }
-
-    section p {
-      max-width: 700px;
-      line-height: 1.8;
-      color: #ccc;
-    }
-
-    /* Contact Form */
-    form {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    form input, form textarea {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      background: #111;
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;
       color: white;
-      outline: none;
+      text-align: center;
+      padding: 120px 20px;
     }
-
-    form button {
-      background: rgb(148, 112, 4);
-      border: none;
-      color: black;
-      font-weight: bold;
-      padding: 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .service-box {
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
-    form button:hover {
-      background: #bbff00a1;
+    .service-box:hover {
+      transform: translateY(-10px);
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
     }
-  /* footer */
-  footer {
-  background: #050505;
-  padding: 50px 20px;
-  text-align: center;
-  border-top: 1px solid rgb(85, 114, 239);
-  box-shadow: 0 -2px 20px rgba(0, 255, 255, 0.2);
-}
-
-footer .footer-container h3 {
-  color: rgb(225, 232, 5);
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-footer .footer-container p {
-  color: #aaa;
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-footer .footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 20px;
-}
-
-footer .footer-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-footer .footer-links a:hover {
-  color: rgb(251, 255, 0);
-}
-
-footer .copyright {
-  font-size: 0.9rem;
-  color: #777;
-}
-/* project old */
-#projects {
-  padding: 100px 10%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-#projects h2 {
-  color: rgb(192, 173, 4);
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#projects p {
-  color: #bbb;
-  margin-bottom: 40px;
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  background: #111;
-  border: 1px solid rgb(0, 204, 255);
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-}
-
-.project-card h3 {
-  color: rgb(176, 173, 0);
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  color: #ccc;
-  line-height: 1.5;
-}
-/* ac */
-#achievements {
-  padding: 100px 10%;
-  text-align: center;
-  background: linear-gradient(to bottom, #000, #020202);
-}
-
-#achievements h2 {
-  color: cyan;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#achievements p {
-  color: #bbb;
-  margin-bottom: 40px;
-}
-
-.achievements-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-.achievement-box {
-  background: #0a0a0a;
-  border: 1px solid cyan;
-  border-radius: 10px;
-  padding: 30px;
-  transition: 0.4s ease;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-}
-
-.achievement-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-}
-
-.achievement-box h3 {
-  color: cyan;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.achievement-box p {
-  color: #ccc;
-}
